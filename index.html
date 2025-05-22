@@ -3,35 +3,35 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <title>タップでまんまるカット！</title>
+  <title>たっぷでまんまるカット！</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     html, body { margin: 0; padding: 0; overflow: hidden; font-family: sans-serif; }
     canvas { display: block; }
-    #buttonBar {
+    #canvas2d {
       position: absolute;
       bottom: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 20px;
+      right: 10px;
+      background: white;
+      border: 2px solid black;
+      border-radius: 8px;
       z-index: 2;
     }
-    button {
-      font-size: 20px;
-      padding: 10px 20px;
+    #info {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(255,255,255,0.85);
+      padding: 10px;
       border-radius: 10px;
-      border: none;
-      background: #4CAF50;
-      color: white;
+      font-size: 16px;
+      z-index: 2;
     }
   </style>
 </head>
 <body>
-  <div id="buttonBar">
-    <button onclick="cutSphere()">きる</button>
-    <button onclick="resetCut()">やりなおす</button>
-  </div>
+  <div id="info">🟢 球をタップすると、その高さでまんまるカット！</div>
+  <canvas id="canvas2d" width="150" height="150"></canvas>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="script.js"></script>
 </body>
